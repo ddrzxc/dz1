@@ -1,0 +1,135 @@
+using System;
+class Mass
+{
+    static void Main()
+    {
+        // 3 прога
+        void f1 (int[] a, int n) 
+        {
+            Random rnd = new Random();
+            for (int i = 0; i < a.Length; i++)
+            {
+                a[i] = rnd.Next(0, 100);
+                Console.WriteLine(a[i]);
+            }
+        }
+        /*Console.WriteLine("Введите количество элементов массива");
+        int n = Convert.ToInt32(Console.ReadLine());
+        int[] b = new int[n];
+        f1(b, n);*/
+        void f2(int[] a, int[] b)
+        {
+            for (int i = 0; i < a.Length; i++)
+            {
+                a[i] = b[i] + a[i];
+                Console.WriteLine(a[i]);
+            }
+        }
+        /*Console.WriteLine("Введите количество элементов массивов");
+        int n = Convert.ToInt32(Console.ReadLine());
+        int[] b = new int[n];
+        int[] a = new int[n];
+        Console.WriteLine("Первый массив");
+        f1(a, n);
+        Console.WriteLine("Второй массив");
+        f1(b, n);
+        Console.WriteLine("Итоговый массив");
+        f2(a, b);*/
+        void f3(int[] a, int n)
+        {
+            for (int i = 0; i < a.Length; i++)
+            {
+                a[i] = n * a[i];
+                Console.WriteLine(a[i]);
+            }
+        }
+        /*Console.WriteLine("Введите количество элементов массива и число");
+        int n = Convert.ToInt32(Console.ReadLine());
+        int k = Convert.ToInt32(Console.ReadLine());
+        int[] b = new int[n];
+        Console.WriteLine("Первый массив");
+        f1(b, n);
+        Console.WriteLine("Итоговый массив");
+        f3(b, k);*/
+        void f4(int[] a, int[] b)
+        {
+            for (int i = 0; i < a.Length; i++)
+            {
+                for (int j = 0; j < b.Length; j++)
+                {
+                    if (a[i] == b[j])
+                    {
+                        Console.WriteLine(a[i]);
+                    }
+                }
+            }
+        }
+        /*Console.WriteLine("Введите количество элементов массивов");
+        int n = Convert.ToInt32(Console.ReadLine());
+        int m = Convert.ToInt32(Console.ReadLine());
+        int[] b = new int[n];
+        int[] a = new int[m];
+        Console.WriteLine("Первый массив");
+        f1(a, n);
+        Console.WriteLine("Второй массив");
+        f1(b, m);
+        Console.WriteLine("Одинаковые элементы");
+        f4(a, b);*/
+        void f5(int[] a)
+        {
+            for (int i = 0; i < a.Length; i++)
+            {
+                Console.WriteLine(a[i]);
+            }
+        }
+        void f6(int[] a)
+        {
+            int temp;
+            for (int i = 0; i < a.Length - 1; i++)
+            {
+                for (int j = i + 1; j < a.Length; j++)
+                {
+                    if (a[i] < a[j])
+                    {
+                        temp = a[i];
+                        a[i] = a[j];
+                        a[j] = temp;
+                    }
+                }
+            }
+        }
+        /*Console.WriteLine("Введите количество элементов массива");
+        int n = Convert.ToInt32(Console.ReadLine());
+        int[] b = new int[n];
+        Console.WriteLine("Массив");
+        f1(b, n);
+        Console.WriteLine("Отсортированный массив");
+        f6(b);
+        f5(b);*/
+        void f7(int[] a)
+        {
+            int max = 0, min = 101;
+            double av = 0;
+            for (int i = 0; i < a.Length; i++)
+            {
+                if (a[i] > max)
+                {
+                    max = a[i];
+                }
+                if (a[i] < min)
+                {
+                    min = a[i];
+                }
+                av = av + a[i];    
+            }
+            av = av/a.Length;
+            Console.WriteLine("Максимальное значение: " + max + ", минимальное: " + min + ", среднее значение: " + av);
+        }
+        /*Console.WriteLine("Введите количество элементов массива");
+        int n = Convert.ToInt32(Console.ReadLine());
+        int[] b = new int[n];
+        Console.WriteLine("Массив:");
+        f1(b, n);
+        f7(b);*/
+    }
+}

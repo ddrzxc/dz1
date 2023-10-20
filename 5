@@ -1,0 +1,30 @@
+using System;
+class Mass
+{
+    static void Main()
+    {
+        // 5 прога
+        int[] m1 = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        int[] m2 = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        int[] m = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        int n = 3;
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                for (int k = 0; k < n; k++)
+                {
+                    m[i * n + j] += m1[i * n + k] * m2[k * n + j];
+                }
+            }
+        }
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                Console.Write(m[i * n + j] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
